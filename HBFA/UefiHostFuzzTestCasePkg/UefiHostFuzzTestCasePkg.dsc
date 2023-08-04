@@ -16,6 +16,7 @@
   SKUID_IDENTIFIER               = DEFAULT
 
   DEFINE TEST_WITH_INSTRUMENT = FALSE
+  MBEDTLS_FUZZ                   = UefiHostFuzzTestCasePkg/TestCase/CryptoPkg/Library/BaseCryptLibMbedTls/Pk
 
 [LibraryClasses]
   BaseLib|UefiHostTestPkg/Library/BaseLibHost/BaseLibHost.inf
@@ -355,6 +356,86 @@
    CcProbeLib|OvmfPkg/Library/CcProbeLib/SecPeiCcProbeLib.inf
    TdxLib|MdePkg/Library/TdxLib/TdxLib.inf  
    PlatformInitLib|OvmfPkg/Library/PlatformInitLib/PlatformInitLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7Sign/TestPkcs7SignPrivateKey.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7Sign/TestPkcs7SignKeyPassword.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7Sign/TestPkcs7SignInData.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7Sign/TestPkcs7SignCert.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7GetAttachedContent/TestPkcs7GetAttachedContent.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7Verify/TestPkcs7Verify.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestPkcs7GetSigners/TestPkcs7GetSigners.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestVerifyEKUsInPkcs7Signature/TestVerifyEKUsInPkcs7Signature.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestImageTimestampVerify/TestImageTimestampVerifyTsaCert.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
+  }
+
+  $(MBEDTLS_FUZZ)/TestImageTimestampVerify/TestImageTimestampVerifyAuthData.inf{
+  <LibraryClasses>
+   BaseCryptLib|CryptoPkg/Library/BaseCryptLibMbedTls/BaseCryptLib.inf
+   MbedTlsLib|CryptoPkg/Library/MbedTlsLib/MbedTlsLib.inf
+   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
+   RngLib|MdePkg/Library/BaseRngLibTimerLib/BaseRngLibTimerLib.inf
   }
 
   [PcdsDynamicDefault]
